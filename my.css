@@ -1,0 +1,7 @@
+body {
+    background: radial-gradient(circle, rgba(209, 213, 223, 1) 0%, rgb(66, 235, 15) 15%, #34d10c 75%);
+    background: radial-gradient(circle, rgba(253, 237, 201, 1) 0%, hsl(140, 100%, 50%) 15%, #4bdb0d 75%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'coin-font';
+}

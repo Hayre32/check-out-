@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <script src="3.4.5"></script>
+    <link rel="stylesheet" href="coin.css?id=18709876654">
+    <link rel="stylesheet" href="style.css?id=56856">
+
+    <style>
+        .score-display {
+            font-size: 50px;
+            position: absolute;
+            color: yellow;
+            animation: fadeOut 1s forwards;
+        }
+
+@keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+@keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+            75% {
+                transform: translateX(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="min-h-screen bg-gradient-to-r from-[#C7913D] to-[#F1D06E] flex justify-center items-center p-3">
+        <div  class="bg-gradient-to-r from-[#C7913D] to-[#F1D06E] rounded-3xl shadow-2xl p-4 w-full max-w-md text-white">
+            <div  class="flex justify-between items-center mb-4 bg-slate-900/10 rounded-3xl shadow-xl">
+                <div class="flex items-center">
+                    <img src="logoo.png" width="40px" height="40px" alt="User Avatar" class="rounded-full mr-2">
+                    <span id="userName">ethio</span>
+                </div>
+                <button onclick="myFunction()" class="bg-600 p-2 rounded-full flex justify-between items-center bg-slate-900/10 hover:bg-slate-900/5 rounded-3xl">
+                    <span class="font-bold text-lg">2X Coins</span>
+                </button>
+            </div>
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("snackbar");
+                    x.className = "show";
+                    setTimeout(function() {
+                        x.className = x.className.replace("show", "");
+                    }, 2000);
+                }
+            </script>
+
+            <div id="snackbar">
+                Coming Soon !!
+            </div>
+
+            <div  class="flex justify-between items-center bg-slate-900/10 hover:bg-slate-900/5 p-2 rounded-3xl shadow-lg">
+                <button class="flex-1 items-center p-2">
+                    <a href="https://t.me/Telebirr_official_channel">
+                        <span >Join Community</span>
+                    </a>
+                </button>
+            </div>
+
+            <div class="text-center mb-4 mt-8">
+                <div class="text-4xl mb-2">
+                    <img src="scorephoto.png" width="50px" height="50px" alt="Coin" class="inline-block mb-1" id="coin-image">
+                    <span id="score" class="score font-bold text-4xl"> 0</span>
+                </div>
+            </div>
+
+            <div class="flex justify-center mb-4" id="coin">
+                <img src="anzabcoin.png" width="80%" height="80%" alt="Character" class="rounded-full clickable shadow-2xl" onclick="handleClick()">
+            </div>
+
+            <div class="flex justify-between items-center mb-2">
+                <div class="flex items-center">
+                    <img src="charge.png" id="charge" alt="Energy" class="mr-2">
+                    <div class="flex justify-between items-center">
+                        <span id="inventory">500</span>
+                        <span> / 500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center bg-slate-900 rounded-3xl shadow-lg mb-2">
+                <div class="bg-zinc-600 rounded-3xl h-2 w-full mx-2">
+                    <div class="bg-gradient-to-r from-[#C7913D] to-[#F1D06E] h-2 rounded-3xl" style="width: 100%;" id="inventory-fill"></div>
+                </div>
+                <br>
+            </div>
+
+            <div class="flex justify-between items-center bg-slate-900 hover:bg-slate-900/95 p-3 rounded-3xl shadow-lg">
+                <button class="flex-1 flex flex-col items-center">
+                    <a href="mine.html">
+                    <img src="pick-hammer.png" alt="Mine" class="p-1" width="40px" height="40px">
+                    <span class="text-sm">Mine</span>
+                </button>
+                <button class="flex-1 flex flex-col items-center">
+                    <a href="boost.html">
+                        <img src="start-up.png" alt="Boost" class="p-1" width="40px" height="40px">
+                        <span class="text-sm">Boost</span>
+                    </a>
+                </button>
+                <button class="flex-1 flex flex-col items-center">
+                    <a href="friend.html">
+                        <img src="friend.png" alt="Friends" class="p-1 ml-1" width="40px" height="40px">
+                        <span class="text-sm">Friends</span>
+                    </a>
+                </button>
+                <button class="flex-1 flex flex-col items-center">
+                    <a href="task.html">
+                        <img src="check-list.png" alt="Task" class="p-1" width="40px" height="40px">
+                        <span class="text-sm">Task</span>
+                    </a>
+                </button>
+                <button class="flex-1 flex flex-col items-center">
+                    <a href="wallet.html">
+                        <img src="wallett.png" alt="Wallet" class="p-1" width="40px" height="40px">
+                        <span class="text-sm">Wallet</span>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="sticker" style="display: none; position: absolute;">
+        <img src="kolang.png" alt="Sticker" style="width: 250px; height: 100px;">
+    </div>
+
+    <script>
+        let coins = 0;
+        let inventory = 500;
+        const maxInventory = 500;
+        const rechargeTime = 3600000; // 1 hour in milliseconds
+
+        function startVibration() {
+            if ("vibrate" in navigator) {
+                window.navigator.vibrate(20);
+            } else {
+                console.log("Vibration not supported on this device");
+            }
+        }
+
+        function handleClick() {
+            if (inventory > 0) {
+                coins += 1;
+                inventory -= 1;
+
+                document.getElementById('score').textContent = `$ ${coins.toLocaleString()}`;
+                updateInventory();
+                startVibration();
+
+                const image = document.querySelector('.clickable');
+                image.classList.add('shake');
+                setTimeout(() => {
+                    image.classList.remove('shake');
+                }, 500);
+
+                const scoreDisplay = document.createElement('div');
+                scoreDisplay.textContent = "+1";
+                scoreDisplay.classList.add('score-display');
+                document.body.appendChild(scoreDisplay);
+
+                const rect = image.getBoundingClientRect();
+                scoreDisplay.style.left = `${rect.left + rect.width / 2}px`;
+                scoreDisplay.style.top = `${rect.top}px`;
+
+                setTimeout(() => {
+                    scoreDisplay.remove();
+                }, 1000);
+
+                if (inventory === 0) {
+                    setTimeout(() => {
+                        inventory = maxInventory;
+                        updateInventory();
+                    }, rechargeTime);
+                }
+            }
+        }
+
+        function updateInventory() {
+            document.getElementById('inventory').textContent = inventory;
+            document.getElementById('inventory-fill').style.width = `${(inventory / maxInventory) * 100}%`;
+
+            var formData = new FormData();
+            formData.append('username', 'Alex');
+            formData.append('charge', inventory);
+
+            fetch('update.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    console.error('Error:', data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        window.onload = () => {
+            const profilePic = localStorage.getItem('profilePic');
+            const userName = localStorage.getItem('userName');
+
+            if (profilePic) {
+                document.querySelector("img[alt='User Avatar']").src = profilePic;
+            }
+
+
+            if (userName) {
+                document.getElementById('userName').textContent = userName;
+            }
+
+            updateInventory();
+        };
+    </script>
+
+</body>
+
+</html>
