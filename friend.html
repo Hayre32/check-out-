@@ -119,6 +119,15 @@
         console.error('Error in copying text: ', err);
       });
     });
+    $config = json_decode(file_get_contents('config.json'), true); 
+ 
+// Access Telegram bot token and database configuration 
+$apiToken = $config['telegram']['bot_token']; 
+ 
+$host = $config['database']['host']; 
+$db = $config['database']['dbname']; 
+$user = $config['database']['user']; 
+$pass = $config['database']['password'];
     
     
   </script>
