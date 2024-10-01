@@ -104,7 +104,7 @@
   <script>
     document.getElementById('inviteButton').addEventListener('click', function () {
       const chatId = "";
-      const textToCopy = "https://t.me/share/url?url=https://t.me/Tele_birr_Tap_bot?start=" + chatId + "&text=Join%20me%20in%20Telebirr%20Tap%20and%20start%20mining%20today!%20Let's%20earn%20together!";
+      const textToCopy = "https://t.me/Tele_birr_Tap_bot/telebirrclicker?start=" + chatId + "Join me in  Telebirr Tap and start mining today! Let's earn together!";
       navigator.clipboard.writeText(textToCopy).then(function () {
         const copyMessage = document.getElementById('copyMessage');
         copyMessage.classList.remove('hidden');
@@ -113,7 +113,7 @@
         setTimeout(function () {
           copyMessage.classList.remove('block');
           copyMessage.classList.add('hidden');
-          window.location = "https://t.me/share/url?url=https://t.me/Tele_birr_Tap_bot?start=" + chatId + "&text=Join%20me%20in%20%20Telebirr%20Tap%20and%20start%20mining%20today!%20Let's%20earn%20together!"
+          window.location = "https://t.me/share/url?url=https://t.me/Tele_birr_Tap_bot/telebirrclicker?start=" + chatId + "&text=Join%20me%20in%20%20Telebirr%20Tap%20and%20start%20mining%20today!%20Let's%20earn%20together!"
         }, 2000);
       }).catch(function (err) {
         console.error('Error in copying text: ', err);
