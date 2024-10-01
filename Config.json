@@ -1,1 +1,11 @@
-
+{
+  "telegram": {
+    "bot_token": "6758969415:AAFYVQSjFdDPoNjaNjqgdH9QNo39nNDUi0E"
+  },
+  "database": {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "dbname": "telegram_referral"
+  }
+}
