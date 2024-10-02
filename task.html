@@ -1,456 +1,240 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlexCoin - Boosters</title>
-    <link rel="stylesheet" href="style-2.css">
-    <link rel="stylesheet" href="responsive-1.css">
-
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
-    <link rel="android-chrome-192x192" href="android-chrome-192x192.png" sizes="192x192">
-    <link rel="android-chrome-512x512" href="android-chrome-512x512.png" sizes="512x512">
-    <script src="3.4.5"></script>
-    <link rel="stylesheet" href="npm/swiper%4011/swiper-bundle.min.css">
+    <title>Airdrop Task - Force Subscribe Channel</title>
     <style>
         * {
-            user-select: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        @keyframes slide-up {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-
-        .slide-up {
-            animation: slide-up 0.5s ease-out;
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
-        .hidden {
-            display: none;
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
         }
-
-        .tooltip {
-            position: relative;
-            display: inline-block;
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .task-item p {
+            font-size: 16px;
+            margin: 0;
+            flex-grow: 1;
+        }
+        .task-item input[type="checkbox"] {
+            transform: scale(1.2);
             cursor: pointer;
         }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: black;
-            color: #fff;
+        .points {
             text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-
-            left: 50%;
-            margin-left: -60px;
-
-            opacity: 0;
-            transition: opacity 0.3s;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #28a745;
         }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
+        .complete-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
-
-        #task {
-            border: 2px solid aqua;
-            border-radius: 1em;
-            margin: 10px;
+        .complete-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .complete-btn:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+        .subscribe-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .subscribe-btn:hover {
+            background-color: #218838;
+        }
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
             padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f0f8ff;
+        }
+        .task p {
+            margin: 0;
+        }
+        .task button {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .task button:hover {
+            background-color: #007bb5;
+        }
+        .task a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+        .task a:hover {
+            text-decoration: underline;
         }
     </style>
-    
+    <link rel="stylesheet" href="task.css">
+    <link rel="stylesheet" href="responsive-1.css">
 </head>
-<div  class="flex justify-between items-center bg-slate-900/10 hover:bg-slate-900/5 p-2 rounded-3xl shadow-lg">
-    <button class="flex-1 items-center p-2">
-        <a href="internal.html">
-            <span >tap section </span>
+<body>
+
+<div class="container">
+    <h1>Airdrop Task</h1>
+    
+    <!-- Task 1: Join Telegram Group -->
+    <div class="task">
+        <p>  <img src="telegram.png" width="30px" alt="Character" onclick="startVibration()">
+            Join our Telegram channel 5 birr</p>
+        <button onclick="window.open('https://t.me/Telebirr', '_blank')">Join Now</button>
+    </div>
+
+    <!-- Task 2: Subscribe Telebirr -->
+    <div class="task">
+        <p> <img src="youtube.png" width="30px" alt="Character" onclick="startVibration()">Subscribe Telebirr 5 birr</p>
+        <button onclick="window.open('https://www.youtube.com/@tele_birr', '_blank')">Join</button>
+    </div>
+
+    <!-- Task 3: Subscribe Telebirr Announcement  -->
+    <div class="task">
+        <p>  <img src="telegram.png" width="30px" alt="Character" onclick="startVibration()">Subscribe Telebirr Announcement </p>
+        <button  onclick="window.open('https://t.me/Telebirr_official_channel')">join</button>
+    </div>
+
+    <!-- Task Item for Force Subscribe to a Channel -->
+    <div class="task-item">
+        <p>Subscribe to the Telegram Channel</p>
+        <a href="https://t.me/Telebirr_official_channel" target="_blank">
+            <button class="subscribe-btn">Subscribe</button>
         </a>
-    </button>
-</div>
-
-<body class="boost">
-
-    <div class="haeder">
-        <a>
-            <svg width="25px" height="25px" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-        </a>
     </div>
 
-    <div style="background-color: burlywood;" class="user-balance ml-4 mr-4 bg-slate-900 rounded-3xl shadow-lg p-4 mt-2">
+    <!-- Task Verification -->
+    <div class="task-item">
+        <p>Check Subscription</p>
+        <input type="checkbox" class="task-check" data-points="50" disabled>
+    </div>
 
-        <div class="balance-coins">
-            <img src="anzabcoin.png" width="50px" alt="">
-            <span id="score"><?php echo $information["balanse"]; ?></span>
-        </div>
+    <!-- Points Display -->
+    <div class="points">
+        Total Points: <span id="totalPoints">0</span>
+    </div>
 
-   
+    <!-- Complete Tasks Button -->
+    <button id="completeTasksBtn" class="complete-btn" disabled>Complete Task</button>
+</div>
+
+<script>
+    const checkbox = document.querySelector('.task-check');
+    const totalPointsDisplay = document.getElementById('totalPoints');
+    const completeTasksBtn = document.getElementById('completeTasksBtn');
+
+    let totalPoints = 0;
+
+    // Simulated API Check for Subscription Status
+    function checkSubscription() {
+        // Replace this simulated check with actual API call
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(true); // Simulates a successful subscription
+            }, 2000); // Simulated API response time
+        });
+    }
+
+    // Handle subscription check
+    document.querySelector('.subscribe-btn').addEventListener('click', async () => {
+        alert("Please subscribe to the channel. Verifying your subscription...");
+
+        // Simulate checking the user's subscription
+        const isSubscribed = await checkSubscription();
         
-        <div class="balance-title">
-            <span class="select-none text-center">Do the tasks to mine more coins</span>
-             <hr class="mt-2">
-        </div>
-        
-    </div>
+        if (isSubscribed) {
+            alert("Subscription verified! You can now complete the task.");
+            checkbox.disabled = false; // Enable checkbox after verification
+        } else {
+            alert("Subscription failed. Please try again.");
+        }
+    });
 
+    // Add event listener to checkbox for task completion
+    checkbox.addEventListener('change', function () {
+        const points = parseInt(this.getAttribute('data-points'));
 
-    <div class="buy-skins">
-        <div class="boosters-title" style="padding: 0 1.25rem">
-            <h2 class="select-none text-2xl">Tasks</h2>
-        </div>
-
-        <div class="swiper skinSwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide slide">
-<div class="skin-button m-b-1" id="coin">
-                                            <div class="boosters-button-detail">
-                            <a href="https://www.youtube.com/">
-                                <div class="boosters-button-image" id="coin">
-                                    <img src="youtube.png" width="30px" alt="Character" onclick="startVibration()">
-                                </div>
-                                   <div>
-                                    <div>
-                                        <h4 class="tooltip">Subscribe tele birr<span class="tooltiptext">Daily bonus with unique rewards</span>
-                                        </h4>
-                                    </div>
-                                <div class="boosters-button-data"><img src="anzabcoin.png" width="20px" class="m-r-25">
-                                      <h5>5 birr</h5>
-                                </div>
-                            </div></a>
-                                   </div>
-                                </div>
-                                <div>
-                                    <svg width="30px" height="3px" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                        
-                                        </div>  
-                                         <div class="skin-button m-b-1" id="coin">
-                                            <div class="boosters-button-detail">
-                            <a href="https://t.me/Telebirr_official_channel>
-                                <div class=" boosters-button-image" id="coin">
-                                    <img src="telegram.png" width="50px" alt="Character" onclick="startVibration()">
-                                </a></div>
-                                   <div>
-                                    <div>
-                                        <h4 class="tooltip">Join Community<span class="tooltiptext">Daily bonus with unique rewards</span>
-                                        </h4>
-                                    </div>
-                                <div class="boosters-button-data"><img src="anzabcoin.png" width="20px" class="m-r-25">
-                                      <h5>5 birr</h5>
-                                </div>
-                            
-                                   </div>
-                                </div>
-                                <div>
-                                    <svg width="30px" height="30px" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                        
-                                        </div>
-                                        
-                        <div class="skin-button m-b-1" id="coin">
-                                            <div class="boosters-button-detail">
-                            <a href="https://t.me/Telebirr_official_channel>
-                                <div class=" boosters-button-image"="" id="coin"></a>
-                                    <img src="telegram.png" width="50px" alt="Character" onclick="startVibration()">
-                                </a></div>
-                                   <div>
-                                    <div>
-                                        <h4 class="tooltip">Join Safaricom<span class="tooltiptext">Daily bonus with unique rewards</span>
-                                        </h4>
-                                    </div>
-                                <div class="boosters-button-data"><img src="anzabcoin.png" width="20px" class="m-r-25">
-                                      <h5>5 birr </h5>
-                                </div>
-                                  </div>
-                                </div>
-                </div>                          
-                </div>
-                        
-    
-    <div class="fixed inset-0 flex items-center justify-center hidden" id="notification">
-        <div class="bg-zinc-800 dark:bg-zinc-800 text-white dark:text-white rounded-lg p-6 relative w-full max-w-md shadow-lg border-yellow-500 border-4 slide-up">
-            <button id="close" class="absolute top-2 right-2 text-zinc-400 dark:text-zinc-400 hover:text-zinc-200 dark:hover:text-zinc-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="flex flex-col items-center" id="notificationBox">
-                <img src="friend.png" width="50%" height="50%" alt="lightning bolt" class="mb-4">
-                <h2 class="text-2xl font-bold mb-2">Full energy </h2>
-
-                <p class="text-center mb-4">Recharge your energy to the maximum and do another round of mining </p>
-                <div class="flex items-center mb-6">
-
-                    <span class="text-lg font-bold">Free</span>
-                </div>
-                <button id="closeNotification" class="bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full w-full max-w-xs">Go
-                   ahead</button>
-            </div>
-        </div>
-    </div>
-    <div class="fixed inset-0 flex items-center justify-center hidden" id="taskNotification">
-        <div class="bg-zinc-800 dark:bg-zinc-800 text-white dark:text-white rounded-lg p-6 relative w-full max-w-md shadow-lg border-yellow-500 border-4 slide-up">
-            <button id="closeNotificationBtn" class="absolute top-2 right-2 text-zinc-400 dark:text-zinc-400 hover:text-zinc-200 dark:hover:text-zinc-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="flex flex-col items-center" id="notificationBox">
-                <img src="photos/gift-box.png" width="50%" height="50%" alt="lightning bolt" class="mb-4">
-                <h2 id="task" class="text-2xl font-bold mb-2">Task Start</h2>
-
-                <p class="text-center mb-4 hidden">Task is ready to start!</p>
-                <div class="flex items-center mb-6">
-                    <span class="text-lg font-bold hidden">Free</span>
-                </div>
-
-            </div>
-        </div>
-    </div>
- </div>
-</div>
-</div>
-<div id="sticker" style="display: none; position: absolute;">
-<img src="kolang.png" alt="Sticker" style="width: 250px; height: 100px;">
-</div>
-
-
-
-
-    <script src="npm/swiper%4011/swiper-bundle.min.js"></script>
-
-    <script>
-
-        function showTaskNotification(url, name, price) {
-            taskUrl = url;
-            const notification = document.getElementById('taskNotification');
-            notification.classList.remove('hidden');
-            document.getElementById('taskNotification').addEventListener('click', function() {
-                var chat_id = null;
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'task.php', true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                xhr.onload = function() {
-                    if (xhr.status === 200) {
-                        var response = JSON.parse(xhr.responseText);
-                        if (response.message === 'Task added successfully') {
-                            console.log('Task successfully updated');
-                            window.location.href = taskUrl;
-                        } else {
-                            console.log(response.message);
-                            alert(response.message);
-                            location.reload();
-
-                        }
-                    } else {
-                        console.error('Error occurred: ' + xhr.status);
-                    }
-                };
-                xhr.send('chat_id=' + encodeURIComponent(chat_id) + '&task_name=' + encodeURIComponent(name) + '&price=' + price);
-
-
-            });
+        if (this.checked) {
+            totalPoints += points; // Add points when checked
+        } else {
+            totalPoints -= points; // Subtract points when unchecked
         }
 
-        document.getElementById('closeNotificationBtn').addEventListener('click', function() {
-            const taskNotification = document.getElementById('taskNotification');
-            taskNotification.classList.add('hidden');
-            location.reload();
-        });
+        // Update total points display
+        totalPointsDisplay.textContent = totalPoints;
 
+        // Enable button only if the task is completed
+        completeTasksBtn.disabled = !this.checked;
+    });
 
-        document.getElementById('close').addEventListener('click', function() {
-            const notification = document.getElementById('notification');
-            notification.classList.add('hidden');
-        });
-    </script>
+    // Handle complete button click
+    completeTasksBtn.addEventListener('click', () => {
+        alert(`Congratulations! You have earned ${totalPoints} points.`);
+        // Add logic here to send the points data to the backend
+        // Reset the task
+        checkbox.checked = false;
+        totalPoints = 0;
+        totalPointsDisplay.textContent = totalPoints;
+        completeTasksBtn.disabled = true; // Disable button after completion
+    });
+</script>
 
-    <script>
-        let notificationEnabled = true;
-
-        document.getElementById('showNotification').addEventListener('click', function() {
-            if (notificationEnabled) {
-                const notification = document.getElementById('notification');
-                notification.classList.remove('hidden');
-            }
-        });
-
-        if (3 === 0) {
-           
-            document.getElementById('full_charge').style.color = 'red';
-            
-            notificationEnabled = false;
-        }
-
-
-        document.getElementById('closeNotification').addEventListener('click', function() {
-            const notification = document.getElementById('notification');
-            notification.classList.add('hidden');
-        
-            location.reload();
-
-        });
-
-        document.getElementById('close').addEventListener('click', function() {
-            const notification = document.getElementById('notification');
-            notification.classList.add('hidden');
-        });
-        var swiper = new Swiper(".skinSwiper", {
-            slidesPerView: 2,
-            spaceBetween: 10
-
-        });
-        document.querySelector('#notificationBox button').addEventListener('click', function() {
-            var chat_id = null;
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'ahead.php', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    console.log(xhr.responseText);
-                } else {
-                    console.error('Error occurred: ' + xhr.status);
-                }
-            };
-            xhr.send('chat_id=' + encodeURIComponent(chat_id) + '&charge=1');
-        });
-    </script>
-    
-    <script>
-        function startVibration() {
-            // Check if the device supports vibration
-            if ("vibrate" in navigator) {
-                // Vibrate for 200ms
-                window.navigator.vibrate(20);
-            } else {
-                console.log("Vibration not supported on this device");
-            }
-            
-            
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const image = document.querySelector('.clickable');
-            const scoreElement = document.getElementById('score');
-            const inventoryElement = document.getElementById('inventory');
-            const inventoryFill = document.getElementById('inventory-fill');
-            var currentSearch = window.location.search;
-            var index = currentSearch.indexOf("&");
-            var number = currentSearch.substring(1, index);
-
-            let inventory = parseInt(inventoryElement.textContent, 10);
-            const maxInventory = 5000;
-
-            function updateInventory() {
-                inventoryElement.textContent = `${inventory}`;
-                inventoryFill.style.width = `${(inventory / maxInventory) * 100}%`;
-
-                var formData = new FormData();
-                formData.append('username', number.replace("chat_id=", ""));
-                formData.append('charge', inventory);
-
-                fetch('update.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (!data.success) {
-                            console.error('Error:', data.message);
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-            }
-
-            function recharge() {
-                if (inventory < maxInventory) {
-                    inventory += 1;
-                    if (inventory > maxInventory) {
-                        inventory = maxInventory;
-                    }
-                    updateInventory();
-                }
-            }
-
-            setInterval(recharge, 1000);
-
-            image.addEventListener('click', function(event) {
-                if (inventory > 0) {
-                    inventory -= 1;
-                    updateInventory();
-
-                    image.classList.add('shake');
-                    setTimeout(() => {
-                        image.classList.remove('shake');
-                    }, 500);
-
-                    const scoreDisplay = document.createElement('div');
-                    scoreDisplay.textContent = "+1";
-                    scoreDisplay.classList.add('score-display');
-                    const rect = image.getBoundingClientRect();
-
-                    scoreDisplay.style.top = `${event.clientY - rect.top}px`;
-                    scoreDisplay.style.left = `${event.clientX - rect.left}px`;
-                    image.parentElement.style.position = 'relative';
-                    image.parentElement.appendChild(scoreDisplay);
-
-                    setTimeout(() => {
-                        scoreDisplay.remove();
-                    }, 2000);
-
-                    var formData = new FormData();
-                    formData.append('number', 10);
-                    formData.append('username', number.replace("chat_id=", ""));
-
-                    fetch('update.php', {
-                            method: 'POST',
-                            body: formData
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.success) {
-                                scoreElement.textContent = data.balanse;
-                                inventoryElement.textContent = `${data.charge}`;
-                            } else {
-                                console.error('Error:', data.message);
-                            }
-                        })
-                        .catch(error => console.error('Error:', error));
-                }
-            });
-
-            updateInventory();
-        });
-    </script>
-    
-    <script src="charge.js"></script>
-    <script src="boost.js"></script>
 </body>
-
 </html>
