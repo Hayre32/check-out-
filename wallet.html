@@ -122,16 +122,15 @@
 
     <!-- Withdraw Section -->
     <div class="withdraw-section">
-        <input type="text" id="walletAddress" placeholder="Enter your telebirr number" required>
-        <button id="withdrawBtn" disabled>Withdraw</button>
+        <input type="text" id="walletAddress" placeholder="withdrawal process is comeing soon" required>
+        <button id="withdrawBtn" class="bg-slate-900 hover:bg-slate-900/95 text-white w-full py-6 mt-4 rounded-3xl shadow-lg flex items-center justify-center" disabled>Withdraw</button>
+        <p id="withdrawBtn" class="text-center text-green-500 mt-4 hidden">Copy Success..!</p>
     </div>
-
-   
     
     <!-- Optional link to another section -->
     <div class="footer">
         <p>or</p>
-        <a href="internal.html"" class="back-btn">Back to  Home</a>
+        <a href="internal.html" class="back-btn">Back to  Home</a>
     </div>
 </div>
 
@@ -147,6 +146,7 @@
             withdrawBtn.disabled = true;
         }
     });
+    
 </script>
 
 </body>
