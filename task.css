@@ -1,0 +1,39 @@
+@charset "utf-8";
+@font-face {
+    font-family: "coin-font";
+    src: url("/assets/font/font.ttf");
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: rgb(54, 76, 241);
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.select-none {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-family: coin-font;
+}
+
+body {
+    background: radial-gradient(circle,rgb(237, 150, 45), rgb(237, 194, 141), rgb(222, 147, 55));
+    background: radial-gradient(circle, rgb(249, 157, 45), rgb(234, 186, 129), rgb(204, 131, 43));
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'coin-font';
+}
